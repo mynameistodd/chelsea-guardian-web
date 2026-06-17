@@ -10,8 +10,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="breaking-news">
+        <div class="container">
+            <span class="label">Breaking News:</span>
+            <div class="ticker">
+                <p>Chelsea Bulldogs win regional championship in overtime... New library expansion project set to begin next month... City Council schedules public hearing on zoning changes...</p>
+            </div>
+        </div>
+    </div>
+
     <header class="main-header">
         <div class="container">
+            <div class="header-top">
+                <span class="date" id="current-date">Tuesday, June 16, 2026</span>
+                <div class="weather">Chelsea, MI: 72°F ☀️</div>
+            </div>
             <div class="logo-area">
                 <h1>Chelsea Guardian</h1>
                 <p class="tagline">Serving Chelsea & Washtenaw County since 1871</p>
@@ -31,42 +44,78 @@
 
     <main class="container">
         <section class="hero-section">
-            <article class="featured-article">
-                <div class="article-image placeholder-img">
-                    <span>Main News Image Placeholder</span>
+            <article class="featured-article clickable" data-article="council">
+                <div class="article-image">
+                    <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=800&q=80" alt="Chelsea Downtown">
                 </div>
                 <div class="article-content">
                     <span class="category">Local Government</span>
                     <h2>Chelsea City Council Approves New Downtown Development Plan</h2>
-                    <p>In a unanimous vote Monday night, the Chelsea City Council moved forward with a comprehensive revitalization plan for the historic downtown area...</p>
-                    <a href="#" class="read-more">Read Full Story &rarr;</a>
+                    <p>In a unanimous vote Monday night, the Chelsea City Council moved forward with a comprehensive revitalization plan for the historic downtown area that includes new green spaces and pedestrian-friendly corridors...</p>
+                    <span class="read-more">Read Full Story &rarr;</span>
                 </div>
             </article>
         </section>
 
         <section class="news-grid">
-            <article class="news-card">
-                <div class="card-image placeholder-img sm"></div>
+            <article class="news-card clickable" data-article="sports">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&w=400&q=80" alt="Football">
+                </div>
                 <div class="card-content">
                     <span class="category">Sports</span>
                     <h3>Chelsea Bulldogs Clinch District Title in Thriller</h3>
                     <p>The Bulldogs overcame a 10-point deficit in the fourth quarter to secure their place in the regional playoffs...</p>
                 </div>
             </article>
-            <article class="news-card">
-                <div class="card-image placeholder-img sm"></div>
+            <article class="news-card clickable" data-article="fair">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1472584069410-35e46830b642?auto=format&fit=crop&w=400&q=80" alt="Fair">
+                </div>
                 <div class="card-content">
                     <span class="category">Community</span>
                     <h3>Annual Chelsea Community Fair to Feature New Attractions</h3>
                     <p>Organizers say this year's fair will include expanded livestock exhibits and a new local artisan market...</p>
                 </div>
             </article>
-            <article class="news-card">
-                <div class="card-image placeholder-img sm"></div>
+            <article class="news-card clickable" data-article="stem">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1581092921461-7d655073f123?auto=format&fit=crop&w=400&q=80" alt="STEM">
+                </div>
                 <div class="card-content">
                     <span class="category">Education</span>
                     <h3>Chelsea Schools Announce New STEM Initiative</h3>
                     <p>A partnership with local tech firms will provide students with hands-on experience in robotics and coding...</p>
+                </div>
+            </article>
+            <article class="news-card clickable" data-article="arts">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=400&q=80" alt="Arts">
+                </div>
+                <div class="card-content">
+                    <span class="category">Arts</span>
+                    <h3>Sculpture Walk Chelsea Returns with Ten New Installations</h3>
+                    <p>The popular annual event showcases the work of regional artists throughout the historic downtown district...</p>
+                </div>
+            </article>
+            <article class="news-card clickable" data-article="business">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=400&q=80" alt="Business">
+                </div>
+                <div class="card-content">
+                    <span class="category">Business</span>
+                    <h3>Historic Chelsea Mill Building to Undergo Major Restoration</h3>
+                    <p>The landmark structure will be converted into a mixed-use space featuring offices and a local marketplace...</p>
+                </div>
+            </article>
+            <article class="news-card clickable" data-article="nature">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=400&q=80" alt="Nature">
+                </div>
+                <div class="card-content">
+                    <span class="category">Environment</span>
+                    <h3>Waterloo Recreation Area Expands Trail System</h3>
+                    <p>Hiking enthusiasts will have five new miles of trails to explore starting this summer season...</p>
                 </div>
             </article>
         </section>
@@ -79,6 +128,16 @@
             </div>
         </section>
     </main>
+
+    <!-- Article Modal -->
+    <div id="article-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body">
+                <!-- Article content will be injected here -->
+            </div>
+        </div>
+    </div>
 
     <footer class="main-footer">
         <div class="container footer-grid">
